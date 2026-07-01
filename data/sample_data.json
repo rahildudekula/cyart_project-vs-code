@@ -1,0 +1,20 @@
+{
+  "assets": [
+    {"asset_id": "A001", "asset_type": "server", "name": "Web Server", "ip_address": "192.168.1.10"},
+    {"asset_id": "A002", "asset_type": "database", "name": "MySQL DB", "ip_address": "192.168.1.20"},
+    {"asset_id": "A003", "asset_type": "domain", "name": "example.com", "ip_address": null}
+  ],
+  "vulnerabilities": [
+    {"cve_id": "CVE-2024-1234", "severity": "critical", "cvss_score": 9.8, "description": "SQL Injection"},
+    {"cve_id": "CVE-2024-5678", "severity": "high", "cvss_score": 7.5, "description": "XSS Vulnerability"}
+  ],
+  "attackers": [
+    {"attacker_id": "ATT001", "name": "APT-29", "threat_level": "critical"}
+  ],
+  "relationships": [
+    {"source": "A001", "target": "CVE-2024-1234", "type": "HAS_VULNERABILITY"},
+    {"source": "A002", "target": "CVE-2024-5678", "type": "HAS_VULNERABILITY"},
+    {"source": "A001", "target": "A002", "type": "CONNECTS_TO"},
+    {"source": "ATT001", "target": "CVE-2024-1234", "type": "EXPLOITS"}
+  ]
+}
